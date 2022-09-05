@@ -1,12 +1,16 @@
 import React from "react";
+import { useCounter } from "../../hooks/useCounter";
 import useFetch from "../../hooks/useFetch";
 
 export const MultipleCustomHooks = () => {
+  const { state, increment } = useCounter(1);
   const { data, hasError, isLoading } = useFetch(
-    "https://breakingbadapi.com/api/quotes/1"
+    `https://breakingbadapi.com/api/quotes/${state}`
   );
 
   // !!null = false
+  //Se hace necesario cuando retorna un arreglo
+  //Si retorna un objeto no
   const { author, quote } = !!data && data[0];
 
   return (
@@ -22,7 +26,9 @@ export const MultipleCustomHooks = () => {
         </blockquote>
       )}
 
-      <button className="btn btn-primary">Hola</button>
+      <button className="btn btn-primary" onClick={() => increment()}>
+        Hola
+      </button>
     </>
   );
 };
