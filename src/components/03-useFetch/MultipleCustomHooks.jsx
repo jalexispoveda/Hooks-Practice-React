@@ -1,6 +1,6 @@
 import React from "react";
-import { useCounter } from "../../hooks/useCounter";
-import useFetch from "../../hooks/useFetch";
+import { useCounter, useFetch } from "../../hooks";
+import { LoadingQuote, Quote } from "./"; // archivo de exportaciones index.js en el mismo folder
 
 export const MultipleCustomHooks = () => {
   const { state, increment } = useCounter(1);
@@ -18,12 +18,9 @@ export const MultipleCustomHooks = () => {
       <h1>Breaking bad Quotes</h1>
       <hr></hr>
       {isLoading ? (
-        <div className="alert alert-info text-center">Loading...</div>
+        <LoadingQuote />
       ) : (
-        <blockquote className="blockquote text-end">
-          <p className="mb-1">{quote}</p>
-          <footer className="blockquote-footer">{author}</footer>
-        </blockquote>
+        <Quote author={author} quote={quote}></Quote>
       )}
 
       <button className="btn btn-primary" onClick={() => increment()}>
