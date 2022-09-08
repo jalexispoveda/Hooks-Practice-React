@@ -6,12 +6,13 @@ import ReactDOM from "react-dom";
 // import { MultipleCustomHooks } from "./components/03-useFetch/MultipleCustomHooks";
 // import { FocusScreen } from "./components/04-useRef/FocusScreen";
 // import { Layout } from "./components/05-useLayoutEffect/Layout";
-import { MemoHook } from "./components/06-useMemo/MemoHook";
+// import { MemoHook } from "./components/06-useMemo/MemoHook";
+import { CallbackHook } from "./components/06-useMemo/CallbackHook";
 // import HookApp from "./HookApp";
 
 ReactDOM.render(
 	// <React.StrictMode>
-	<MemoHook />,
+	<CallbackHook />,
 	// </React.StrictMode>,
 	document.getElementById("root")
 );
