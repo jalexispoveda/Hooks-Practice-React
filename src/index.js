@@ -7,12 +7,13 @@ import ReactDOM from "react-dom";
 // import { FocusScreen } from "./components/04-useRef/FocusScreen";
 // import { Layout } from "./components/05-useLayoutEffect/Layout";
 // import { MemoHook } from "./components/06-useMemo/MemoHook";
-import { CallbackHook } from "./components/06-useMemo/CallbackHook";
+// import { CallbackHook } from "./components/06-useMemo/CallbackHook";
+import { Padre } from "./components/07-tarea-memo/Padre";
 // import HookApp from "./HookApp";
 
 ReactDOM.render(
 	// <React.StrictMode>
-	<CallbackHook />,
+	<Padre />,
 	// </React.StrictMode>,
 	document.getElementById("root")
 );
