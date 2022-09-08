@@ -5,12 +5,13 @@ import ReactDOM from "react-dom";
 // import SimpleForm from "./components/02-useEffect/SimpleForm";
 // import { MultipleCustomHooks } from "./components/03-useFetch/MultipleCustomHooks";
 // import { FocusScreen } from "./components/04-useRef/FocusScreen";
-import { Layout } from "./components/05-useLayoutEffect/Layout";
+// import { Layout } from "./components/05-useLayoutEffect/Layout";
+import { MemoHook } from "./components/06-useMemo/MemoHook";
 // import HookApp from "./HookApp";
 
 ReactDOM.render(
 	// <React.StrictMode>
-	<Layout />,
+	<MemoHook />,
 	// </React.StrictMode>,
 	document.getElementById("root")
 );
