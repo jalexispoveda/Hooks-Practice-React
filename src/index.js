@@ -11,6 +11,8 @@ import ReactDOM from "react-dom";
 import { Padre } from "./components/07-tarea-memo/Padre";
 // import HookApp from "./HookApp";
 
+import "./components/08-useReducer/intro-reducer";
+
 ReactDOM.render(
 	// <React.StrictMode>
 	<Padre />,
