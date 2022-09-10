@@ -8,14 +8,15 @@ import ReactDOM from "react-dom";
 // import { Layout } from "./components/05-useLayoutEffect/Layout";
 // import { MemoHook } from "./components/06-useMemo/MemoHook";
 // import { CallbackHook } from "./components/06-useMemo/CallbackHook";
-import { Padre } from "./components/07-tarea-memo/Padre";
+// import { Padre } from "./components/07-tarea-memo/Padre";
 // import HookApp from "./HookApp";
 
-import "./components/08-useReducer/intro-reducer";
+// import "./components/08-useReducer/intro-reducer";
+import { TodoApp } from "./components/08-useReducer/TodoApp";
 
 ReactDOM.render(
 	// <React.StrictMode>
-	<Padre />,
+	<TodoApp />,
 	// </React.StrictMode>,
 	document.getElementById("root")
 );
