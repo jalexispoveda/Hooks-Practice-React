@@ -27,6 +27,25 @@ export const TodoApp = () => {
 
     dispatchTodos(action);
   };
+
+  const handleCompleteTodo = (id) => {
+    const action = {
+      type: "[TODO] Complete todo",
+      payload: id,
+    };
+
+    dispatchTodos(action);
+  };
+
+  const handleDeleteTodo = (id) => {
+    //Si vas a remover por id, debes mantener el standar en todos los reducer que crees
+    const action = {
+      type: "[TODO] Remove Todo",
+      payload: id,
+    };
+
+    dispatchTodos(action);
+  };
   return (
     <>
       <h1>
@@ -35,7 +54,11 @@ export const TodoApp = () => {
       <hr></hr>
       <div className="row">
         <div className="col-7">
-          <TodoList todos={todos} reducer={dispatchTodos} />
+          <TodoList
+            todos={todos}
+            onDeleteTodo={handleDeleteTodo}
+            onCompleteTodo={handleCompleteTodo}
+          />
         </div>
         <div className="col-5">
           <h4>Agregar TODO</h4>
