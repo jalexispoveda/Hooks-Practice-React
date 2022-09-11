@@ -1,7 +1,7 @@
-import React, { useReducer, useEffect } from "react";
+import React from "react";
+import { useTodo } from "../../hooks/useTodo";
 import { TodoAdd } from "./TodoAdd";
 import { TodoList } from "./TodoList";
-import { todoReducer } from "./todoReducer";
 
 //Objeto inicial
 const initialState = [];
@@ -11,45 +11,19 @@ const init = () => {
   return JSON.parse(localStorage.getItem("todos") || []);
 };
 export const TodoApp = () => {
-  //Si tengo mas de un reducer en el mismo functional component especifico nombre en el dispatch
-  const [todos, dispatchTodos] = useReducer(todoReducer, initialState, init);
+  const {
+    todos,
+    handleNewTodo,
+    handleCompleteTodo,
+    handleDeleteTodo,
+    todosCount,
+    pedingTodosCount,
+  } = useTodo(init, initialState);
 
-  useEffect(() => {
-    console.log(todos);
-    localStorage.setItem("todos", JSON.stringify(todos) || []);
-  }, [todos]);
-
-  const handleNewTodo = (todo) => {
-    const action = {
-      type: "[TODO] Add Todo",
-      payload: todo,
-    };
-
-    dispatchTodos(action);
-  };
-
-  const handleCompleteTodo = (id) => {
-    const action = {
-      type: "[TODO] Complete todo",
-      payload: id,
-    };
-
-    dispatchTodos(action);
-  };
-
-  const handleDeleteTodo = (id) => {
-    //Si vas a remover por id, debes mantener el standar en todos los reducer que crees
-    const action = {
-      type: "[TODO] Remove Todo",
-      payload: id,
-    };
-
-    dispatchTodos(action);
-  };
   return (
     <>
       <h1>
-        Todo App: ({todos.length}) <small>Pendientes: {todos.length}</small>
+        Todo App: ({todosCount}) <small>Pendientes: {pedingTodosCount}</small>
       </h1>
       <hr></hr>
       <div className="row">
