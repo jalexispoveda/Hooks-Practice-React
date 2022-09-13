@@ -10,6 +10,8 @@ export const NavBar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
+            {/* El navlink nos permite saber si la ruta esta activa (por un parametro que recibe 
+                llamado is active) y de esa manera asignamos la clase */}
             <NavLink
               to="/"
               className={`nav-link ${(props) =>
